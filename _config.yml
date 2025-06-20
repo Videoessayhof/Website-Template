@@ -3,7 +3,7 @@ email: VideoEssayHOF@gmail.com
 description: >
   A site dedicated to preserving and celebrating the most influential video essays ever made.
 baseurl: "/home/" # the subpath of your site, e.g. /blog/
-url: "https://videoessayhof.github.io/Website-Template" # the base hostname & protocol for your site
+url: "https://videoessayhof" # the base hostname & protocol for your site
 
 twitter_username: N/A
 github_username: Videoessayhof
