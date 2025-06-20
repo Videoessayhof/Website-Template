@@ -1,14 +1,12 @@
-# Site settings
 title: Video Essay Hall of Fame
 email: VideoEssayHOF@gmail.com
 description: >
-  A site dedicated to preserving and celebrating the most influential video essays ever made.# this means to ignore newlines until 
-
+  A site dedicated to preserving and celebrating the most influential video essays ever made.
 baseurl: "/home/" # the subpath of your site, e.g. /blog/
-url: "VideoEssayHOF.com" # the base hostname & protocol for your site
+url: "https://VideoEssayHOF.com" # the base hostname & protocol for your site
 
-twitter_username:
-github_username:
+twitter_username: N/A
+github_username: Videoessayhof
 
 # Build settings
 markdown: kramdown
