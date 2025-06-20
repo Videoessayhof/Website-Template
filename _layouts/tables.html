@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Essay Hall of Fame</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    
+    nav {
+      background-color: #34495e;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    nav a:hover {
+      background-color: #4a6b8a;
+    }
+    
+    .sheet-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    
+    .sheet-header {
+      background-color: #f1f1f1;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .sort-options {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .sort-btn {
+      padding: 8px 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .sort-btn:hover {
+      background-color: #2980b9;
+    }
+    
+    iframe {
+      border: none;
+      width: 100%;
+      min-height: 600px;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 30px;
+    }
+    
+    @media (max-width: 768px) {
+      .sheet-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .sort-options {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Video Essay Hall of Fame</h1>
+    </div>
+  </header>
+  
+  <nav>
+    <div class="container">
+      <a href="{{ "/" | relative_url }}">Home</a>
+      <a href="{{ "/Starter Info/" | relative_url }}">Starter Info</a>
+      <a href="{{ "/videos/" | relative_url }}">Video Essays</a>
+      <a href="{{ "/archive/" | relative_url }}">Archive</a>
+    </div>
+  </nav>
+  
+  <main class="container">
+    <div class="sheet-container">
+      <div class="sheet-header">
+        <h2>Nominee List</h2>
+        <div class="sort-options">
+          <button class="sort-btn" onclick="sortSheet('A')">Sort by Title</button>
+          <button class="sort-btn" onclick="sortSheet('B')">Sort by Creator</button>
+          <button class="sort-btn" onclick="sortSheet('C')">Sort by Date</button>
+          <button class="sort-btn" onclick="sortSheet('D')">Sort by Votes</button>
+        </div>
+      </div>
+      <iframe id="google-sheet" src="https://docs.google.com/spreadsheets/d/1S793nQPJj6DpZljo438xP6gFNg_M6cvG8GROiKlLsMQ/edit?gid=283514097#gid=283514097"></iframe>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Video Essay Hall of Fame. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    function sortSheet(column) {
+      const iframe = document.getElementById('google-sheet');
+      const sheetUrl = iframe.src.split('#')[0];
+      const newUrl = `${sheetUrl}#gid=283514097&range=${column}1:${column}1000`;
+      iframe.src = newUrl;
+      
+      // Note: This is a basic implementation. For actual sorting functionality,
+      // you would need to use the Google Sheets API or implement a client-side solution
+      // with table-sorting libraries if you extract the data.
+      
+      // Alternative: Consider using Google Sheets API for more robust sorting:
+      // https://developers.google.com/sheets/api
+    }
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-layout: default
-title: Starter Info
-permalink: /Starter Info/
+layout: tables
+title: Video & Tabletop Games
+permalink: /Video & Tabletop Games/
 ---

@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Starter Info
-permalink: /Starter Info/
+title: Editor's Choice
+permalink: /Editor's Choice/
 ---
